@@ -1,0 +1,92 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+
+export const Spinner = ({ size = "md", color = "text-white", className }: {
+  size?: string;
+  color?: string;
+  className?: string;
+}) => {
+  const barCount = 12;
+  const animationDuration = 1.2;
+  const animationDelayStep = animationDuration / barCount;
+
+  const barWidth = {
+    sm: "w-[1.5px]",
+    md: "w-[2px]",
+    lg: "w-[2.5px]",
+  }[size];
+
+  const barHeight = {
+    sm: "h-[6px]",
+    md: "h-[8px]",
+    lg: "h-[10px]",
+  }[size];
+
+  const translateYValue = {
+    sm: 8,
+    md: 10,
+    lg: 12,
+  }[size];
+
+  const containerSize = {
+    sm: "h-6 w-6",
+    md: "h-8 w-8",
+    lg: "h-12 w-12",
+  }[size];
+
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      aria-label="Loading"
+      className={cn("relative", containerSize, className)}
+    >
+      {Array.from({ length: barCount }).map((_, i) => (
+        <div
+          key={i}
+          className={cn(
+            "absolute rounded-full bg-current left-1/2 top-1/2",
+            barWidth,
+            barHeight,
+            color,
+            "animate-[ios-loader-fade_1.2s_linear_infinite]"
+          )}
+          style={{
+            transform: `translate(-50%, -50%) rotate(${
+              i * (360 / barCount)
+            }deg) translateY(-${translateYValue}px)`,
+            animationDelay: `${i * animationDelayStep - animationDuration}s`,
+            transformOrigin: "center",
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+export function PageLoader({ className }: { className?: string }) {
+  return (
+    <div
+      className={cn(
+        "flex h-screen w-full items-center justify-center",
+        className
+      )}
+    >
+      <Spinner size="lg" color="text-primary" className="mx-auto" />
+    </div>
+  );
+}
+
+export function InlineLoader({ className }: { className?: string }) {
+  return (
+    <div
+      className={cn(
+        "flex items-center justify-center p-4",
+        className
+      )}
+    >
+      <Spinner size="md" className="mx-auto" />
+    </div>
+  );
+}
