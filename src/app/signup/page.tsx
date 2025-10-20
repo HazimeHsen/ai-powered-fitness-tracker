@@ -61,7 +61,7 @@ export default function SignUpPage() {
       } else if (result?.ok) {
         window.location.href = "/onboarding";
       }
-    } catch (error) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setLoading(false);
@@ -81,7 +81,7 @@ export default function SignUpPage() {
       if (result?.error) {
         setError("Failed to sign up with Google. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setGoogleLoading(false);

@@ -775,8 +775,8 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-8 italic text-xl leading-relaxed">
-                  "The predictive analytics are mind-blowing. FitAI prevents overtraining and optimizes my recovery 
-                  better than any sports scientist I've worked with."
+                  &ldquo;The predictive analytics are mind-blowing. FitAI prevents overtraining and optimizes my recovery 
+                  better than any sports scientist I&apos;ve worked with.&rdquo;
                 </p>
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-secondary to-accent rounded-2xl flex items-center justify-center">
@@ -799,8 +799,8 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-8 italic text-xl leading-relaxed">
-                  "As a busy executive, FitAI's adaptive intelligence is a game-changer. It adjusts to my schedule 
-                  while maintaining optimal training stimulus. Pure genius."
+                  &ldquo;As a busy executive, FitAI&apos;s adaptive intelligence is a game-changer. It adjusts to my schedule 
+                  while maintaining optimal training stimulus. Pure genius.&rdquo;
                 </p>
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-2xl flex items-center justify-center">
@@ -840,7 +840,7 @@ export default function Home() {
               
               <p className="text-xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
                 Experience the future of fitness with AI that learns, adapts, and evolves with you. 
-                Join thousands of elite athletes who've already revolutionized their training.
+                Join thousands of elite athletes who&apos;ve already revolutionized their training.
               </p>
               
               {!session && (

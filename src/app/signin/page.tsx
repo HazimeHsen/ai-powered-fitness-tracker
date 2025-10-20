@@ -3,7 +3,7 @@ import { signIn } from "next-auth/react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowRight, ArrowLeft, UserRound, AlertCircle } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -46,7 +46,7 @@ export default function SignInPage() {
       } else if (result?.ok) {
         window.location.href = "/";
       }
-    } catch (error) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setLoading(false);
@@ -66,7 +66,7 @@ export default function SignInPage() {
       if (result?.error) {
         setError("Failed to sign in with Google. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setError("An error occurred. Please try again.");
     } finally {
       setGoogleLoading(false);
@@ -144,7 +144,7 @@ export default function SignInPage() {
             </Button>
           </div>
           <p className="text-sm text-center text-gray-600">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/signup" className="text-primary hover:underline">
               Sign up
             </Link>
