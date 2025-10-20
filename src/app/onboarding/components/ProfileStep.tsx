@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Select, SelectContent, SelectItem, SelectTrigger } from "@/components/ui/select";
 import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 import { cn } from "@/lib/utils";
@@ -23,13 +23,13 @@ interface ProfileStepProps {
   profileData: ProfileData;
   setProfileData: (data: ProfileData) => void;
   errors: {
-    name?: string;
-    birthDate?: string;
-    weight?: string;
-    height?: string;
-    fitnessLevel?: string;
+    name: string;
+    birthDate: string;
+    weight: string;
+    height: string;
+    fitnessLevel: string;
   };
-  setErrors: (errors: any) => void;
+  setErrors: (errors: { name: string; birthDate: string; weight: string; height: string; fitnessLevel: string; }) => void;
 }
 
 const fitnessLevels = [
@@ -39,7 +39,7 @@ const fitnessLevels = [
 ];
 
 export default function ProfileStep({ profileData, setProfileData, errors, setErrors }: ProfileStepProps) {
-  const validateField = (field: string, value: any) => {
+  const validateField = (field: string, value: string | undefined) => {
     let error = "";
     
     switch (field) {
@@ -56,7 +56,8 @@ export default function ProfileStep({ profileData, setProfileData, errors, setEr
         } else {
           const today = new Date();
           const eighteenYearsAgo = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
-          if (value > eighteenYearsAgo) {
+          const birthDate = new Date(value);
+          if (birthDate > eighteenYearsAgo) {
             error = "You must be at least 18 years old";
           }
         }
@@ -90,7 +91,7 @@ export default function ProfileStep({ profileData, setProfileData, errors, setEr
     return error === "";
   };
 
-  const handleBlur = (field: string, value: any) => {
+  const handleBlur = (field: string, value: string | undefined) => {
     validateField(field, value);
   };
 

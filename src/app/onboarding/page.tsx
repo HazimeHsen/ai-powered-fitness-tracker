@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Check, ChevronLeft } from "lucide-react";
+import { Check, ChevronLeft } from "lucide-react";
 import { PageLoader, Spinner } from "@/components/ui/spinner";
 import ProfileStep from "./components/ProfileStep";
 import GoalsStep from "./components/GoalsStep";
@@ -197,7 +197,7 @@ export default function OnboardingPage() {
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
               Welcome to FitAI
             </h1>
-            <p className="text-gray-600 mt-2 text-base sm:text-lg">Let's set up your fitness journey</p>
+            <p className="text-gray-600 mt-2 text-base sm:text-lg">Let&apos;s set up your fitness journey</p>
           </div>
 
             <div className="flex justify-center mb-8">

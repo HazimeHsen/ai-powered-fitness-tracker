@@ -1,6 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -18,7 +19,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { LogIn, User, Activity, Target, Brain, Zap, TrendingUp, Shield, Star, ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { LogIn, User, Activity, Target, Brain, Zap, TrendingUp, Shield, Star, Menu, ArrowRight } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -59,9 +60,11 @@ export default function Home() {
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" className="relative h-10 w-10 rounded-full p-0">
                         {session.user?.image ? (
-                          <img
+                          <Image
                             src={session.user.image}
                             alt="Profile"
+                            width={40}
+                            height={40}
                             className="h-10 w-10 rounded-full object-cover"
                           />
                         ) : (
@@ -393,9 +396,11 @@ export default function Home() {
                     <DropdownMenuTrigger asChild>
                       <Button variant="ghost" className="relative h-10 w-10 rounded-full p-0">
                         {session.user?.image ? (
-                          <img
+                          <Image
                             src={session.user.image}
                             alt="Profile"
+                            width={40}
+                            height={40}
                             className="h-10 w-10 rounded-full object-cover"
                           />
                         ) : (
@@ -675,7 +680,7 @@ export default function Home() {
               Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">Elite Athletes</span>
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Join the revolution that's transforming how athletes, trainers, and fitness enthusiasts achieve their goals.
+              Join the revolution that&apos;s transforming how athletes, trainers, and fitness enthusiasts achieve their goals.
             </p>
           </div>
           
@@ -737,7 +742,7 @@ export default function Home() {
               What <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Elite Athletes</span> Say
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Hear from world-class athletes and fitness professionals who've revolutionized their training with FitAI.
+              Hear from world-class athletes and fitness professionals who&apos;ve revolutionized their training with FitAI.
             </p>
           </div>
           
@@ -751,8 +756,8 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-8 italic text-xl leading-relaxed">
-                  "FitAI's neural algorithms completely revolutionized my training. The AI adapts to my performance in real-time, 
-                  something no human trainer could ever match."
+                  &ldquo;FitAI&apos;s neural algorithms completely revolutionized my training. The AI adapts to my performance in real-time, 
+                  something no human trainer could ever match.&rdquo;
                 </p>
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center">
