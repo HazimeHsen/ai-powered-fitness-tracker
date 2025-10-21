@@ -207,9 +207,11 @@ export default function Home() {
                       <div className="space-y-4">
                         <div className="flex items-center space-x-3">
                           {session.user?.image ? (
-                            <img
+                            <Image
                               src={session.user.image}
                               alt="Profile"
+                              width={32}
+                              height={32}
                               className="h-8 w-8 rounded-full object-cover"
                             />
                           ) : (

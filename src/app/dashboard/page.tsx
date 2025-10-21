@@ -12,7 +12,6 @@ import {
   Clock, 
   Flame, 
   Target, 
-  Calendar,
   Play,
   BookOpen,
   BarChart3,
@@ -122,7 +121,7 @@ export default function DashboardPage() {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div>
-                    <CardTitle>Today's Workout</CardTitle>
+                    <CardTitle>Today&apos;s Workout</CardTitle>
                     <CardDescription>Your personalized AI-recommended session</CardDescription>
                   </div>
                   <Badge variant="secondary">
@@ -165,7 +164,7 @@ export default function DashboardPage() {
                       </svg>
                     </div>
                     <h3 className="text-xl font-semibold mb-2">Workout Complete!</h3>
-                    <p className="text-muted-foreground mb-6">Great job on completing today's session</p>
+                    <p className="text-muted-foreground mb-6">Great job on completing today&apos;s session</p>
                     <Button variant="outline">
                       View Summary
                     </Button>

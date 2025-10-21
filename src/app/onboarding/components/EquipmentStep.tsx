@@ -15,7 +15,7 @@ interface EquipmentStepProps {
     workoutLocation?: string;
     equipment?: string;
   };
-  setErrors: (errors: any) => void;
+  setErrors: (errors: Record<string, string>) => void;
 }
 
 const equipmentOptions = [
