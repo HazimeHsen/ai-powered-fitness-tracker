@@ -266,7 +266,7 @@ export default function OnboardingPage() {
                 equipmentData={equipmentData} 
                 setEquipmentData={setEquipmentData}
                 errors={equipmentErrors}
-                setErrors={setEquipmentErrors}
+                setErrors={(errors) => setEquipmentErrors(errors)}
               />
             )}
           </div>

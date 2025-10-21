@@ -12,10 +12,10 @@ interface EquipmentStepProps {
   equipmentData: EquipmentData;
   setEquipmentData: (data: EquipmentData) => void;
   errors: {
-    workoutLocation?: string;
-    equipment?: string;
+    workoutLocation: string;
+    equipment: string;
   };
-  setErrors: (errors: Record<string, string>) => void;
+  setErrors: (errors: { workoutLocation: string; equipment: string; }) => void;
 }
 
 const equipmentOptions = [
